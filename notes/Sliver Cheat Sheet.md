@@ -1,0 +1,1 @@
+* generate a session w/ 443 or 80 as a fallback `generate --mtls login.magic-box.dev:443,login.magic-box.dev:80,login.magic-box.dev:21 --os windows --arch amd64`
