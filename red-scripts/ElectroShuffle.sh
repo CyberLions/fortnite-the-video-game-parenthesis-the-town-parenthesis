@@ -15,6 +15,13 @@ done
 # Shuffle the order of the source files
 shuffled_files=($(shuf -e "${source_files[@]}"))
 
+# Ensure shuffled files don't replace themselves
+for (( i=0; i<"${#source_files[@]}"; i++ )); do
+    while [ "${shuffled_files[$i]}" == "${source_files[$i]}" ]; do
+        shuffled_files=($(shuf -e "${source_files[@]}"))
+    done
+done
+
 # Replace each file in shuffled order
 for i in "${!source_files[@]}"; do
     cp "${shuffled_files[$i]}" "${source_files[$i]}"
