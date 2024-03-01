@@ -1,3 +1,3 @@
 # fortnite-the-video-game-parenthesis-the-town-parenthesis
 
-![sawg out](img/team-banner.png)
+![sawg out](branding/team-banner.png)
