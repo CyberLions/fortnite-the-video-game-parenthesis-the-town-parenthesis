@@ -1,0 +1,3 @@
+[submodule "red-scripts/erm"]
+	path = red-scripts/erm
+	url = https://github.com/lfgberg/erm.git
