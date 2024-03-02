@@ -1,9 +1,6 @@
-whiteteam
-BanditAlex
-MarshalJustice
-PrairiePioneer
-OutlawOutlook
-CalamityJane
+DeputyDigital
+WranglerWeb
+CattleRustler
 SheriffMcCoy
 SaloonSally
 DocHolliday
@@ -12,6 +9,8 @@ GamblerSteve
 WildBill
 PonyExpress
 AnnieOakley
-DeputyDigital
-WranglerWeb
-CattleRustler
+BanditAlex
+MarshalJustice
+PrairiePioneer
+OutlawOutlook
+CalamityJane
