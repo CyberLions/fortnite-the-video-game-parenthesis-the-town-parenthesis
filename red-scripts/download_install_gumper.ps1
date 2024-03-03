@@ -3,7 +3,7 @@ $exeUrl = "https://github.com/CyberLions/fortnite-the-video-game-parenthesis-the
 $bgUrl = "https://raw.githubusercontent.com/lfgberg/GumpBit/main/GumpBit.png"
 
 # Define the destination paths in the user's Downloads folder
-$exePath = "$env:USERPROFILE\Downloads\GumpBit.exe"
+$exePath = "$env:USERPROFILE\Downloads\gumper.exe"
 $bgPath = "$env:USERPROFILE\Downloads\GumpBit.png"
 
 # Use WebClient to download the files
